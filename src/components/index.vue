@@ -14,118 +14,29 @@
                     <div class="left-220" style="margin: 0px;">
                         <div class="banner-nav">
                             <ul>
-                                <li>
+                                <li v-for="(item, index) in catelist" :key="item.id">
                                     <h3>
                                         <i class="iconfont icon-arrow-right"></i>
-                                        <span>手机数码</span>
+                                        <span>{{item.title}}</span>
                                         <p>
-                                            <span>
-                                                手机通讯&nbsp;
+                                            <span v-for="(v, index) in item.subcates" :key="v.id">
+                                                {{v.title}}&nbsp;
                                             </span>
-                                            <span>
-                                                摄影摄像&nbsp;
-                                            </span>
-                                            <span>
-                                                存储设备&nbsp;
-                                            </span>
+
                                         </p>
                                     </h3>
                                     <div class="item-box">
                                         <dl>
                                             <dt>
-                                                <a href="/goods/40.html">手机数码</a>
+                                                <a href="#">{{item.title}}</a>
                                             </dt>
                                             <dd>
-                                                <a href="/goods/43.html">手机通讯</a>
-                                                <a href="/goods/43.html">摄影摄像</a>
-                                                <a href="/goods/43.html">存储设备</a>
+                                                <a href="#" v-for="(v, index) in item.subcates" :key="v.id">{{v.title}}</a>
                                             </dd>
                                         </dl>
                                     </div>
                                 </li>
-                                <li>
-                                    <h3>
-                                        <i class="iconfont icon-arrow-right"></i>
-                                        <span>电脑办公</span>
-                                        <p>
-                                            <span>
-                                                电脑整机&nbsp;
-                                            </span>
-                                            <span>
-                                                外设产品&nbsp;
-                                            </span>
-                                            <span>
-                                                办公打印&nbsp;
-                                            </span>
-                                        </p>
-                                    </h3>
-                                    <div class="item-box">
-                                        <dl>
-                                            <dt>
-                                                <a href="/goods/40.html">电脑办公</a>
-                                            </dt>
-                                            <dd>
-                                                <a href="/goods/43.html">电脑整机</a>
-                                                <a href="/goods/43.html">外设产品</a>
-                                                <a href="/goods/43.html">办公打印</a>
-                                            </dd>
-                                        </dl>
-                                    </div>
-                                </li>
-                                <li>
-                                    <h3>
-                                        <i class="iconfont icon-arrow-right"></i>
-                                        <span>影音娱乐</span>
-                                        <p>
-                                            <span>
-                                                平板电视&nbsp;
-                                            </span>
-                                            <span>
-                                                音响DVD&nbsp;
-                                            </span>
-                                            <span>
-                                                影音配件&nbsp;
-                                            </span>
-                                        </p>
-                                    </h3>
-                                    <div class="item-box">
-                                        <dl>
-                                            <dt>
-                                                <a href="/goods/40.html">影音娱乐</a>
-                                            </dt>
-                                            <dd>
-                                                <a href="/goods/43.html">平板电视</a>
-                                                <a href="/goods/43.html">音响DVD</a>
-                                                <a href="/goods/43.html">影音配件</a>
-                                            </dd>
-                                        </dl>
-                                    </div>
-                                </li>
-                                <li>
-                                    <h3>
-                                        <i class="iconfont icon-arrow-right"></i>
-                                        <span>服装类</span>
-                                        <p>
-                                            <span>
-                                                男装&nbsp;
-                                            </span>
-                                            <span>
-                                                女装&nbsp;
-                                            </span>
-                                        </p>
-                                    </h3>
-                                    <div class="item-box">
-                                        <dl>
-                                            <dt>
-                                                <a href="/goods/40.html">服装类</a>
-                                            </dt>
-                                            <dd>
-                                                <a href="/goods/43.html">男装</a>
-                                                <a href="/goods/43.html">女装</a>
-                                            </dd>
-                                        </dl>
-                                    </div>
-                                </li>
+
                             </ul>
                         </div>
                     </div>
@@ -134,8 +45,10 @@
                         <div class="banner-img">
                             <div id="focus-box" class="focus-box">
                                 <el-carousel height="341px">
-                                <el-carousel-item v-for="item in 4" :key="item">
-                                    <h3>{{ item }}</h3>
+                                    <el-carousel-item v-for="item in sliderlist" :key="item.id">
+                                        <a href="#">
+                                            <img :src="item.img_url" style="display:block;width:100%;" alt="">
+                                        </a>
                                     </el-carousel-item>
                                 </el-carousel>
                             </div>
